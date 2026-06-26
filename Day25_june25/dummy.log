@@ -1,0 +1,10 @@
+2025-09-15 09:00:01 INFO User: john Login successful
+2025-09-15 09:02:15 INFO User: alice Login successful
+2025-09-15 09:05:20 INFO Database SELECT * FROM users;
+2025-09-15 09:06:10 INFO User: david Login successful
+2025-09-15 09:07:00 INFO Database UPDATE users SET status='active' WHERE id=5;
+2025-09-15 09:10:30 ERROR Invalid password for User: mike
+2025-09-15 09:11:45 INFO User: sarah Login successful
+2025-09-15 09:15:10 INFO Database DELETE FROM logs WHERE id=20;
+2025-09-15 09:18:20 INFO User: james Logout successful
+2025-09-15 09:20:00 INFO Database INSERT INTO logs VALUES (101,'Login');
