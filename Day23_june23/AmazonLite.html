@@ -1,0 +1,213 @@
+.<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Lite</title>
+<link rel="shortcut icon" href="allimages/social.png" type="image/x-icon">
+<style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+#searchbar{
+    width:350px;
+    height:30px;
+    padding:8px 12px;
+    font-size:16px;
+    text-align:center;
+    margin:0;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    width: 220px;
+    background: #fafafa;
+}
+
+.product img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.product button {
+    margin-top: 10px;
+    padding: 6px 10px;
+    cursor: pointer;
+    background: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+#head
+{
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+}
+#navbar{
+    background:#131921;
+    height:60px;
+    display:flex;
+    align-items:center;
+    padding:0 20px;
+}
+#controls{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin:auto;
+}
+
+#priceFilter{
+    height:40px;
+}
+</style>
+</head>
+
+<body>
+<div id="navbar">
+<div id="head">Amazon Lite</div>
+
+<div id="controls">
+        <input type="text" id="searchbar" placeholder="Search...">
+
+        <select id="priceFilter">
+            <option value="all">All Prices</option>
+            <option value="5000">Under ₹5000</option>
+            <option value="20000">Under ₹20000</option>
+            <option value="40000">Under ₹40000</option>
+            <option value="100000">Above ₹40000</option>
+        </select>
+    </div>
+
+
+</div>
+<h5>Discover Great Products</h5>
+<div id="container"></div>
+
+<script>
+let container = document.getElementById("container");
+
+let products=[{
+            pname:" smart phones",
+            cname:"samsung",
+            price:35000,
+            img:"./phone.jpg"
+        },
+        {
+            pname:"Headphones",
+            cname:"BOAT",
+            price:2000,
+            img:"./head1.jpg"
+
+        },
+        {
+            pname:"HP laptops",
+            cname:"HP",
+            price:40000,
+            img:"./lap.jpg"
+            
+        },
+        {
+            pname:"leno Tablet",
+            cname:"Lenovo",
+            price:35000,
+            img:"./tab.jpg"
+
+        },
+        {
+           pname:"Bluetooth",
+            cname:"Boat",
+            price:3000,
+            img:"./bt.jpg"
+        },
+        {
+            pname:"Smartwatch",
+            cname:"pixel watch",
+            price:35000,
+            img:"./pix.jpg"
+
+        },
+        {
+            pname:"sony camera",
+            cname:"Sony Alpha",
+            price:40000,
+            img:"./sony.jpg"
+
+        },
+        {
+            pname:"Monitor",
+            cname:"Monitar",
+            price:60000,
+            img:"./benq.jpg"
+
+        }]
+
+function display(list) {
+    container.innerHTML = "";
+
+    list.forEach((product) => {
+        let div = document.createElement("div");
+
+        div.className = "product";
+
+        div.innerHTML = `
+            <img src="${product.img}" alt="">
+            <h3>${product.pname}</h3>
+            <p>${product.cname}</p>
+            <p><strong>₹${product.price}</strong></p>
+            <button>Buy Now</button>
+        `;
+
+        container.appendChild(div);
+    });
+}
+let searchbar = document.getElementById("searchbar");
+
+searchbar.addEventListener("input", () => {
+    let searchval = searchbar.value.toLowerCase();
+
+    let filtered = products.filter((pr) => {
+        return pr.pname.toLowerCase().includes(searchval);
+    });
+
+    display(filtered);
+});
+
+display(products);
+let priceFilter = document.getElementById("priceFilter");
+
+priceFilter.addEventListener("change", () => {
+
+    let priceval = Number(priceFilter.value);
+
+    let filtered = products.filter((pr) => {
+
+        if (priceFilter.value == "all") {
+            return true;
+        }
+
+        return pr.price <= priceval;
+    });
+
+    display(filtered);
+
+});
+
+
+</script>
+
+</body>
+</html>

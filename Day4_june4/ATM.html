@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var bankbalanc=Number(prompt("enter balnace"))
+        var ch=Number(prompt("1check balance\n2 withdraw\n3 deposit\n4 exit"))
+        var witham,depo
+        switch(ch)
+        {
+            case 1:document.write("Balance :",bankbalanc)
+            break;
+
+            case 2:witham=Number(prompt("enter withdraw amount"))
+            bankbalanc=bankbalanc-witham
+            document.write("available amount: ",bankbalanc)
+            break;
+
+            case 3:depo=Number(prompt("enter diposit amount"))
+            bankbalanc=bankbalanc+depo
+            document.write("available amount: ",bankbalanc)
+            break;
+            
+            case 4:document.write("thank you for choosing us!")
+            break;
+            default:document.write("invalid choice enter valid number(1-4)")
+
+        }
+    </script>
+    
+</body>
+</html>

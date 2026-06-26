@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main
+        {
+            width: 300px;
+            height: 350px;
+            text-align: center;
+            background-color: #D8BFD8;
+            margin: auto;
+            border-radius: 15px;
+        }
+        .a
+        {
+            margin-top: 5px;
+        }
+        h2{
+            color: black;
+            text-align: center;
+        }
+        #line{
+            color: gray;
+            text-align: center;
+            font-size: 18px;
+        }
+        button
+        {
+            background-color: purple;
+            color: white;
+            border-radius: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h2>Welcome</h2>
+        <p id="line">login to your account</p>
+    <input type="text" name="" id="user" placeholder="Enter username" class="a">
+    <br><br>
+    <input type="password" name="" id="pass" placeholder="Enter password" class="a">
+    <br><br>
+    <button onclick="getClick()">LOGIN</button>
+    <br><br>
+    <div id="div"></div>
+    <p id="output"></p>
+    </div>
+<script>
+    let username="admin"
+    let password="1234"
+    let starttime=""
+    let otp
+    function getClick()
+    {
+        let user=document.getElementById("user")
+        let pass=document.getElementById("pass")
+        if(username==user.value&&password==pass.value)
+    {
+        alert("login successfully")
+    }
+    else
+    {
+        prompt("enter mobile number/Email")
+        otp=Math.ceil(Math.random()*10000)
+        alert("valid for 60 seconds"+ "\nOTP is " + otp)
+        starttime=Date.now()
+        
+        writeOtp()
+    }
+    }
+    function writeOtp()
+    {
+        let div=document.getElementById("div")
+        div.innerHTML=` <input type= "text" name="" id= "userOTP" placeholder="Enter OTP"><br><br><button onclick='verify()'>ENTER</button>`
+        
+      
+    }
+    function verify()
+    {    let userOTP = document.getElementById("userOTP");
+         let msg = document.getElementById("output");
+
+       
+        if(Date.now()-starttime>60000)
+    {
+            msg=document.getElementById("output")
+            msg.innerHTML="OTP Expired"
+    }
+    else if(otp==userOTP.value)
+    {
+        msg.innerHTML="login successfull via OTP"
+    }
+    else
+    {
+        msg.innerHTML="Wrong OTP"
+    }
+        
+    }
+</script>
+</body>
+</html>

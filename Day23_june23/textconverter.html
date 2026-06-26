@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            text-align: center;
+        }
+        button
+        {
+            height: 40px;
+            width: 120px;
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text coverter</h1>
+    <textarea name="" id="content" rows="15" cols="60"></textarea>
+    <br><br>
+    <button onclick="getuppercase()">covertuppercase</button>
+    <button onclick="getlowercase()">covertlowercase</button>
+    <button onclick="countwords()">countwords</button>
+    <script>
+        let text=document.getElementById("content")
+        function getuppercase()
+        {
+            text.value=text.value.toUpperCase();
+        }
+        function getlowercase()
+        {
+            text.value=text.value.toLowerCase();
+        }
+        function countwords()
+        {
+            let a=text.value.split(" ")
+            text.value="total words "+a.length
+
+        }
+    </script>
+    
+</body>
+</html>

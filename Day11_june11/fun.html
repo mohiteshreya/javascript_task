@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Amazon</h1>
+    <label for="">Enter price</label>
+    <input type="number" name="" id="pr">
+    <br><br>
+    <label for="">Enter Quantity</label>
+    <input type="number" name="" id="qn">
+    <br><br>
+    <button onclick="getBill()">calculate</button>
+    <br><br>
+    <button onclick="getDiscount1()">Apply discount of 10%</button>
+    <button onclick="getDiscount2()">Apply discount of 20%</button>
+    <button onclick="getDiscount3()">Apply discount of 30%</button>
+    <h2 id="result"></h2>
+    
+
+    <script>
+        var pr=document.getElementById("pr")
+        var qn=document.getElementById("qn")
+        var result=document.getElementById("result")
+        let totalbill=0
+        function getBill()
+        {
+            totalbill=(pr.value)*(qn.value)
+            result.innerHTML=" Total Bill "+totalbill
+        }
+        function getDiscount1()
+        {
+            if(totalbill>1000)
+        {
+            let dis=totalbill*0.1
+            result.innerHTML="Total Bill "+totalbill+"<br> discount of 10% "+dis+"<br> final bill : "+(totalbill-dis)+"<br><button>proceed to pay</button>"
+        }
+        else
+        {
+            alert("add more item worth of "+(1000-totalbill))
+        }
+        }
+        function getDiscount2()
+        {
+            if(totalbill>2000)
+        {
+            let dis=totalbill*0.2
+            result.innerHTML="Total Bill "+totalbill+"<br> discount of 20% "+dis+"<br> final bill : "+(totalbill-dis)+"<br><button>proceed to pay</button>"
+        }
+        else
+        {
+            alert("add more item worth of "+(2000-totalbill))
+        }
+        }
+        function getDiscount3()
+        {
+            if(totalbill>3000)
+        {
+            let dis=totalbill*0.1
+            result.innerHTML="Total Bill "+totalbill+"<br> discount of 30% "+dis+"<br> final bill : "+(totalbill-dis)+"<br><button>proceed to pay</button>"
+        }
+        else
+        {
+            alert("add more item worth of "+(3000-totalbill))
+        }
+        }
+        
+
+    </script>7
+</body>
+</html>

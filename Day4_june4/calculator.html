@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      var n1=Number(prompt("enter first number"))
+      var n2=Number(prompt("enter second number"))
+      var ch=Number(prompt("----operation-----\n1 Addition\n2substraction\n3multiplication\n4division"))
+      switch(ch)
+      {
+        case 1:document.write("<h1>Addition "+(n1+n2)+"</h1>")
+        break;
+        case 2:document.write("<h1>substraction "+(n1-n2)+"</h1>")
+        break;
+        case 3:document.write("<h1>Multiplication "+(n1*n2)+"</h1>")
+        break;
+        case 4:document.write("<h1>division "+(n1/n2)+"</h1>")
+        break;
+        default:document.write("<h1>invalid choice please enter number between(1-4)</h1>")
+      }
+    </script>
+    
+</body>
+</html>

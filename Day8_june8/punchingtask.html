@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Enter employee number</label>
+    <br>
+    <input type="number" name="" id="empno">
+    <br><br>
+     <label for="">Enter employee name</label>
+     <br>
+    <input type="text" name="" id="emname">
+    <br><br>
+     <label for="">Enter time in hour</label>
+     <br>
+    <input type="number" name="" id="time">
+    <br><br>
+    <button onclick="getData()">submit</button>
+   <h1 style="font-size: 12px;" id="msg"></h1>
+    <script>
+        function getData()
+        {
+            let str=""
+            let r=""
+            var no=document.getElementById("empno").value
+            var na=document.getElementById("emname").value
+            var ti=document.getElementById("time").value
+            var msg=document.getElementById("msg")
+         
+             if (ti >= 5 && ti < 12) {
+               str="Good Morning"
+               r="AM"
+            } else if (ti >= 12 && ti < 17) {
+                str="Good Afternoon"
+                r="PM"
+            } 
+            else {
+                str="Good Night"
+                r="PM"
+            }
+              msg.innerHTML="<p>Emp No = " + no + "</p>" +
+                "<p>Emp Name = " + na + "</p>" +
+                "<p>Timing = " + ti + r+"</p><br>" +"Hello "+na+" "+str
+               
+        }
+
+            /*if(ti<"12:00")
+        {
+            msg.innerHTML="Emp No:"+no+<b>+"Hello "+na+ ", Good Morning"
+        }
+        else if(ti<"17:00")
+        {
+             msg.innerHTML="Hello "+na+", Good Afternoon"
+        }
+        else{
+             msg.innerHTML="Hello "+na+", Good Night"
+        }
+        }*/
+    </script>
+
+    
+</body>
+</html>

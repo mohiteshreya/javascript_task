@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login form</h1>
+    <input type="text" name="" id="user" placeholder="Enter username">
+    <br>
+    <br>
+    <input type="password" name="" id="pass" placeholder="Enter password">
+    <button onclick="getData()">Login</button>
+    <h1 id="msg"></h1>
+    <script>
+        
+        var u="Admin"
+        var p="1234"
+        var count=0
+        var i
+        function getData()
+        {
+        var msg=document.getElementById("msg")
+           var a=document.getElementById("user").value
+           var b=document.getElementById("pass").value
+           
+            if(a==u && b==p)
+           {
+            count=0
+             msg.innerHTML="login successfully"
+        
+           }
+           else
+           {
+            count++
+            if(count==3)
+           {
+            msg.innerHTML="Account is freezed for 5 min!"
+           }
+           else
+           {
+            msg.innerHTML="login Unsuccessfull,Attempt left "+(3-count)
+           }
+           }
+        }
+    </script>
+</body>
+</html>

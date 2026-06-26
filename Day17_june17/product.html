@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *
+    {
+        text-align: center;
+    }
+    #c
+    {
+    display:inline-block;
+    width:220px;
+    height: 380px;
+    padding:10px;
+    margin:10px;
+    border:1px solid black;
+    vertical-align:top;
+    border-radius: 20px;
+    background-color: white;
+    
+   }  
+    
+    img{
+        width: 180px;
+        height: 180px;
+    }
+    #container
+    {
+        text-align: center;
+    }
+   
+     h2
+     {
+    font-size:22px;
+     }
+
+     h3
+     {
+    font-size:18px;
+     }
+
+    h4
+    {
+    color: green;
+    font-size:24px;
+    }
+    
+    #title
+    {
+    text-align:center;
+    color:purple;
+    border-bottom:2px solid blue;
+    display:inline-block;
+    padding-bottom:3px;
+    font-size: 80;
+    } 
+    #button
+    {
+        margin-left: 400px;
+        background-color: rgb(49, 183, 201);
+        border: none;
+        width: 160px;
+        height: 30px;
+        border-radius: 10px;
+
+    }
+    
+    </style>
+
+</head>
+<body>
+   <div style="text-align:center;">
+    <h1 id="title">Product Catalog</h1>
+</div>
+    <button onclick="getproduct()" id="button">show product</button>
+    <div id="container"></div>
+    <script>
+        let card=document.getElementById("container")
+        let products=[{
+            pname:" smart phones",
+            cname:"samsung",
+            price:"35000",
+            img:"./phone.jpg"
+        },
+        {
+            pname:"Headphones",
+            cname:"BOAT",
+            price:2000,
+            img:"./head1.jpg"
+
+        },
+        {
+            pname:"HP laptops",
+            cname:"HP",
+            price:40000,
+            img:"./lap.jpg"
+            
+        },
+        {
+            pname:"leno Tablet",
+            cname:"Lenovo",
+            price:35000,
+            img:"./tab.jpg"
+
+        },
+        {
+           pname:"Bluetooth",
+            cname:"Boat",
+            price:3000,
+            img:"./bt.jpg"
+        },
+        {
+            pname:"Smartwatch",
+            cname:"pixel watch",
+            price:35000,
+            img:"./pix.jpg"
+
+        },
+        {
+            pname:"sony camera",
+            cname:"Sony Alpha",
+            price:40000,
+            img:"./sony.jpg"
+
+        },
+        {
+            pname:"Monitor",
+            cname:"Monitar",
+            price:60000,
+            img:"./benq.jpg"
+
+        }]
+        function getproduct()
+        {
+            card.innerHTML=""
+            products.forEach((val)=>{
+                card.innerHTML+=`<div id="c"><img src="${val.img}" alt="">
+                    <h2>Product Name:${val.pname}</h2>
+                    <h3>Company Name:${val.cname}</h3>
+                    <h4>Price:${val.price}</h4> </div>`
+            })
+        }
+    </script>
+    
+</body>
+</html>
