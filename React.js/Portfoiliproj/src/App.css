@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    background: radial-gradient(
+        circle at center,
+        #1a1035 0%,
+        #0a0914 70%,
+        #050507 100%
+    );
+
+    overflow-x: hidden;
+}
+html{
+    scroll-behavior: smooth;
+}

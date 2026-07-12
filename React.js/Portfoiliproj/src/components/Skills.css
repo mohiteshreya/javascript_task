@@ -1,0 +1,182 @@
+.skills{
+
+    min-height:100vh;
+
+    background:#09090b;
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+}
+
+.skills-title{
+    font-size:60px;
+    margin-bottom:90px;
+    margin-top:-90px;
+
+}
+
+.orbit{
+   display:flex;
+    gap:35px;
+    width:max-content;
+
+    animation:scroll 20s linear infinite;
+}
+.slider{
+    width:100%;
+    height:550px;       /* increase according to your card height */
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+}
+@keyframes scroll{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+
+.orbit:hover{
+    animation-play-state:paused;
+}
+
+.tech{
+    width:100%;
+    height:100%;
+    position:relative;
+
+    transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+
+    transition:transform .8s;
+}
+.tech.flipped{
+    transform:rotateY(180deg);
+}
+.front,
+.back{
+    position:absolute;
+    inset:0;   /* instead of width/height */
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+
+    border-radius:25px;
+
+    background:linear-gradient(
+        145deg,
+        rgba(139,92,246,.15),
+        rgba(255,255,255,.05)
+    );
+
+    border:1px solid rgba(139,92,246,.35);
+
+    box-sizing:border-box;
+    padding:25px;
+}
+.back{
+    transform:rotateY(180deg);
+    text-align:center;
+}
+
+.back h3{
+    color:#8B5CF6;
+    margin-bottom:15px;
+}
+
+.back p{
+    color:#d4d4d4;
+    line-height:1.7;
+    font-size:17px;
+}
+.front img{
+    width:150px;
+    height:150px;
+    object-fit:contain;
+}
+
+.front span{
+    margin-top:20px;
+    font-size:28px;
+    font-weight:600;
+}
+
+
+
+.tech img{
+    width:150px;
+    height:150px;
+    object-fit:contain;
+}
+.tech span{
+    margin-top:12px;
+    font-size:25px;
+    font-weight:600;
+}
+
+.tech-card:hover .front,
+.tech-card:hover .back{
+    border-color:#8B5CF6;
+    box-shadow:0 0 30px rgba(139,92,246,.45);
+}
+.learning{
+    position:absolute;
+
+    top:-10px;
+    left:30px;
+
+    width:220px;
+    height:160px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(139,92,246,.25);
+    border-radius:20px;
+
+    text-align:center;
+}
+.learning h3{
+    margin:0 0 10px;
+    color:#8B5CF6;
+    font-size:24px;
+}
+
+.learning p{
+    margin:3px 0;
+    font-size:16px;
+    color:#d4d4d4;
+}
+.tech-card{
+    width:350px;
+    height:500px;
+    perspective:1000px;
+    flex-shrink:0;
+    cursor:pointer;
+}

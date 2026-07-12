@@ -1,0 +1,130 @@
+body{
+margin:0;
+background:#09090b;
+font-family:sans-serif;
+}
+
+.room{
+    width:100%;
+    height:100vh;
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background-image:url("../assets/room-Backgroung.png");
+    background-size:cover;
+    background-position:center;
+
+    perspective:1200px;
+    overflow:hidden;
+}
+
+.screen{
+
+color:white;
+
+text-align:center;
+
+}
+
+.room-about,
+.room-skills,
+.room-projects,
+.room-contact{
+
+position:absolute;
+
+padding:20px 40px;
+
+background:#171717;
+
+border:1px solid #8b5cf6;
+
+color:white;
+
+border-radius:15px;
+
+box-shadow:0 0 20px #8b5cf655;
+
+}
+
+.room-about{
+top:150px;
+left:430px;
+z-index:3;
+}
+
+.room-skills{
+top:650px;
+left:350px;
+z-index:3;
+}
+
+.room-projects{
+top:120px;
+right:450px;
+z-index:3;
+}
+
+.room-contact{
+bottom:150px;
+right:320px;
+z-index:3;
+}
+.screen-hitbox{
+    position:absolute;
+
+    width:470px;
+    height:270px;
+
+    left:38%;
+    top:40%;
+
+    z-index:4;
+
+    border-radius:20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+    transition:.3s;
+    
+    overflow:hidden;
+    transform-origin:center;
+     transform-style:preserve-3d;
+     cursor:pointer;
+
+}
+
+.screen-hitbox:hover{
+    box-shadow:
+    0 0 30px #8b5cf6,
+    0 0 80px rgba(139,92,246,.5);
+}
+.screen-text{
+    text-align:center;
+}
+
+.screen-text h2{
+    color:#8B5CF6;
+    font-size:49px;
+    margin:0;
+}
+
+.screen-text p{
+    color:white;
+    margin-top:15px;
+}
+.room-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    pointer-events:none;
+    opacity:0;
+    z-index:2;
+}
